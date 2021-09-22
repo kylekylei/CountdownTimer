@@ -60,6 +60,9 @@ class ViewController: UIViewController {
     
     @IBAction func settingOkay(_ sender: Any) {
         
+        let goal = goalField.text!
+        goalButton.setTitle(goal, for: .normal)
+        
         let dueDate = dueDatePicker.date
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] (_) in
@@ -83,10 +86,6 @@ class ViewController: UIViewController {
             
             }
      
-        
-        let goal = goalField.text!
-        goalButton.setTitle(goal, for: .normal)
-            
         view.endEditing(true)
         goalSettingView.isHidden = true
         modalBackground.isHidden = true
